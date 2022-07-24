@@ -1,5 +1,5 @@
 ### `Check live demo`
-[Link Shortener Website](https://link-shortener-app.netlify.app/)
+[Link Shortener Website](https://link-shortner-01102002.netlify.app)
 # Getting Started with Create React App
 
 
