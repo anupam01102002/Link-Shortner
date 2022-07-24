@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -11,11 +11,50 @@
     />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-     <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>link-shortener</title>
   </head>
   <body>
+    <section class="wrapper">
+      <div id="stars"></div>
+      <div id="star2"></div>
+      <div id="star3"></div>
+    </section>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      const inputs = document.querySelectorAll(".form-control input");
+      const labels = document.querySelectorAll(".form-control label");
+
+      labels.forEach((label) => {
+        label.innerHTML = label.innerText
+          .split("")
+          .map(
+            (letter, idx) => `<span style="
+				transition-delay: ${idx * 50}ms
+			">${letter}</span>`
+          )
+          .join("");
+      });
+      // SOCIAL PANEL JS
+      const floating_btn = document.querySelector(".floating-btn");
+      const close_btn = document.querySelector(".close-btn");
+      const social_panel_container = document.querySelector(
+        ".social-panel-container"
+      );
+
+      floating_btn.addEventListener("click", () => {
+        social_panel_container.classList.toggle("visible");
+      });
+
+      close_btn.addEventListener("click", () => {
+        social_panel_container.classList.remove("visible");
+      });
+    </script>
   </body>
 </html>
